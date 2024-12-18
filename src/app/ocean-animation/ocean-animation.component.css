@@ -1,0 +1,64 @@
+.ocean-animation {
+  background: linear-gradient(to bottom, #00aaff, #004d99); /* Create a gradient for the ocean */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.fish {
+  position: absolute; 
+  width: 50px; 
+  height: 30px; 
+  animation: swim 10s infinite; 
+}
+
+@keyframes swim {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100px); 
+  }
+  100% {
+    transform: translateX(0); 
+  }
+}
+
+/* Create a simple fish shape using CSS */
+.fish::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ff6347; /* Fish color */
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Create a fish shape */
+}
+
+.plants {
+  position: absolute; 
+  width: 40px; 
+  height: 80px; 
+  animation: sway 5s infinite; 
+}
+
+@keyframes sway {
+  0% {
+    transform: rotate(0deg); 
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Create a simple plant shape using CSS */
+.plants::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #228B22; /* Plant color */
+  border-radius: 20px; /* Rounded edges for the plant */
+}

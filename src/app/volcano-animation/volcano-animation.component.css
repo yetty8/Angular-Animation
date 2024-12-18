@@ -1,0 +1,55 @@
+.volcano-animation {
+  background: linear-gradient(to bottom, #8B4513, #A0522D); /* Create a gradient for the volcano */
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.volcano {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px; /* Width of the volcano */
+  height: 100px; /* Height of the volcano */
+  background: #8B4513; /* Volcano color */
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Create a triangular volcano shape */
+}
+
+.lava {
+  position: absolute;
+  bottom: 100px; /* Position above the volcano */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px; /* Width of the lava */
+  height: 30px; /* Height of the lava */
+  background: radial-gradient(circle, #ff4500, #ff6347); /* Lava color */
+  border-radius: 50%; /* Round shape for the lava */
+  animation: erupt 5s infinite; /* Apply the erupt animation */
+  animation-delay: 2s; /* Delay before starting the animation */
+}
+
+@keyframes erupt {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-20px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+.smoke {
+  position: absolute;
+  bottom: 130px; /* Position above the lava */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px; /* Width of the smoke */
+  height: 20px; /* Height of the smoke */
+  background: rgba(192, 192, 192, 0.8); /* Smoke color */
+  border-radius: 50%; /* Round shape for the smoke */
+  animation: rise 5s infinite; /* Apply the rise animation */
+  animation-delay: 1s; /* Delay before starting the animation */
+}
+
+@keyframes rise {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-50px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
